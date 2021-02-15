@@ -1,13 +1,18 @@
 const config = require("./src/assets/content/data/config.json")
 const infoData = require("./src/assets/content/data/info.json")
+const testData = require("./src/assets/content/data/test.json")
 
 module.exports = {
   siteName: config.title,
+
+  siteUrl: 'https://sygdrome.github.io',
+  pathPrefix: '/brevifolia-gridsome-forestry',
   //make editable config & data files available to graphql
   metadata: {
     siteName: config.title,
     siteDescription: config.description,
     infoData: infoData,
+    testData: testData,
   },
   plugins: [
     {

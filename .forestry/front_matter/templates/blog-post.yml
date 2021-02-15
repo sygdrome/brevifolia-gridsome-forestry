@@ -5,6 +5,9 @@ fields:
 - type: text
   name: title
   label: title
+- type: text
+  name: test
+  label: test
 - name: author
   type: select
   default: ''

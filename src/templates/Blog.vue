@@ -7,8 +7,11 @@
             <div class="blog__info" >
             <h1>{{ $page.post.title }}</h1>
             <h3>{{ $page.post.date }}</h3>
+            <h3>{{ $page.post.test }}</h3>
             </div>
-            <div class="blog__body" v-html="$page.post.content"></div>
+            <div class="blog__body" v-html="$page.post.content">
+                {{ $page.post.content}}
+            </div>
             <div class="blog__footer">
                 <h2>Written By: {{ $page.post.author }}</h2>
                 <g-link :to="nextBlogPath">
@@ -46,6 +49,7 @@
 query getPostData ($path: String!) {
     post: blog(path: $path) {
         title
+        test
         date (format: "MMMM DD YYYY")
         author
         content
