@@ -45,5 +45,3 @@ fields:
     color_format: Hex
   description: Enter page text color here
   default: "#EBEBEB"
-pages:
-- src/assets/content/data/test.json
