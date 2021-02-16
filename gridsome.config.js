@@ -6,7 +6,7 @@ module.exports = {
   siteName: config.title,
 
   siteUrl: 'https://sygdrome.github.io',
-  pathPrefix: '/brevifolia-gridsome-forestry',
+  pathPrefix: '',
   //make editable config & data files available to graphql
   metadata: {
     siteName: config.title,
