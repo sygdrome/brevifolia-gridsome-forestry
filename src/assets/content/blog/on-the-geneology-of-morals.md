@@ -1,5 +1,5 @@
 ---
-title: On the Geneology of Moralssss
+title: On the Geneology of Morals
 test: Not mines of moria
 author: Friedrich Nietzsche
 date: 2019-08-19T07:00:00.000+00:00
