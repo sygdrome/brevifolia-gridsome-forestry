@@ -17,7 +17,8 @@ jobs:
         run: npm install
         
       - name: Build Gridsome site
-        run: yarn build
+      - run: yarn build
+        
 
 
       - name: Deploy to GitHub Pages
@@ -25,9 +26,10 @@ jobs:
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist # The folder the action should deploy.
-          
+        
       - name: Publish
         uses: selenehyun/gh-push@v0.3.2
+      - run: git checkout gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
           COMMIT_FILES: dist/*
