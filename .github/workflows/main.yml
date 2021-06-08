@@ -27,16 +27,28 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist # The folder the action should deploy.
           
-      - name: Switch branch
-        run: git checkout gh-pages
-        
-      - name: Pushes to another repository
-        uses: cpina/github-action-push-to-another-repository@v1.3
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: 'gh-pages'
-          destination-github-username: 'sygdrome'
-          destination-repository-name: 'brevifolia-stage'
-          user-email: sygdrome@gmail.com
-          target-branch: main
+   #   - name: Switch branch
+   #     run: |
+   #          git checkout gh-pages
+   #          git status
+   #     
+   #   - name: Pushes to another repository
+   #     uses: cpina/github-action-push-to-another-repository@v1.3
+   #     env:
+   #       API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+   #     with:
+   #       source-directory: 'gh-pages'
+   #       destination-github-username: 'sygdrome'
+   #       destination-repository-name: 'brevifolia-stage'
+   #       user-email: sygdrome@gmail.com
+   #       target-branch: main
+      - name: test
+      - run: |
+             git checkout gh-pages
+             git add .
+             git commit -m "merge"
+             git remote add origin2 https://github.com/sygdrome/brevifolia-stage
+             git push origin2 main
+             
+             
+             
