@@ -18,9 +18,7 @@ jobs:
         
       - name: Build Gridsome site
         run: yarn build
-      
-      - name: test
-        run: npm run deploy
+
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
