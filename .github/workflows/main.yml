@@ -25,4 +25,13 @@ jobs:
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist # The folder the action should deploy.
-          
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'gh-pages'
+          destination-github-username: 'sygdrome'
+          destination-repository-name: 'brevifolia-stage'
+          user-email: sygdrome@gmail.com
+          target-branch: main
