@@ -30,10 +30,13 @@ jobs:
       - name: Switch branch
         run: git checkout gh-pages
         
-      - name: Publish
-        uses: selenehyun/gh-push@v0.3.2
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@v1.3
         env:
-          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          COMMIT_FILES: dist/*
-          REPO_FULLNAME: sygdrome/brevifolia-stage
-          BRANCH: gh-pages
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'gh-pages'
+          destination-github-username: 'sygdrome'
+          destination-repository-name: 'brevifolia-stage'
+          user-email: sygdrome@gmail.com
+          target-branch: main
