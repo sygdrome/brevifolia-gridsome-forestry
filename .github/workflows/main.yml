@@ -24,6 +24,9 @@ jobs:
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist # The folder the action should deploy.
+          
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
         
       - name: Push directory to another repository
         uses: cpina/github-action-push-to-another-repository@v1.3
