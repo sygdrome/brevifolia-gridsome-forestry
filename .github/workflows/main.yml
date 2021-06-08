@@ -27,7 +27,7 @@ jobs:
           folder: dist # The folder the action should deploy.
           
       - name: Publish
-        uses: selenehyun/gh-push@0.3.2
+        uses: selenehyun/gh-push@v0.3.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
           COMMIT_FILES: dist/*
