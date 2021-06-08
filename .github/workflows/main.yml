@@ -43,7 +43,7 @@ jobs:
    #       user-email: sygdrome@gmail.com
    #       target-branch: main
       - name: test
-      - run: |
+        run: |
              git checkout gh-pages
              git add .
              git commit -m "merge"
