@@ -26,10 +26,12 @@ jobs:
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist # The folder the action should deploy.
+          
+      - name: Switch branch
+        run: git checkout gh-pages
         
       - name: Publish
         uses: selenehyun/gh-push@v0.3.2
-      - run: git checkout gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
           COMMIT_FILES: dist/*
