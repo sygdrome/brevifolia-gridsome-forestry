@@ -15,13 +15,15 @@ jobs:
 
       - name: Installing packages
         run: npm install
-
-      - name: Build Gridsome site
-        run: npm run build
         
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: dist # The folder the action should deploy.
+      - name: Build Gridsome site
+        run: yarn build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: dist
           
