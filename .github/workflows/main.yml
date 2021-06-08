@@ -47,8 +47,8 @@ jobs:
              git checkout gh-pages
              git add .
              git commit -m "merge"
-             git remote add origin2 https://github.com/sygdrome/brevifolia-stage
-             git push origin2 main
+             git remote add origin2 git@github.com:${{ secrets.API_TOKEN_GITHUB }}/brevifolia-stage
+             git push origin2 gh-pages:main --force
              
              
              
